@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    environment:
+      - POSTGRES_HOST=db
+
+    command: ["java", "-jar", "./fuelCostForecast.jar"]
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
