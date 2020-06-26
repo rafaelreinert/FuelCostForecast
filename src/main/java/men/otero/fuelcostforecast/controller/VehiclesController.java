@@ -23,7 +23,7 @@ public class VehiclesController {
     }
 
     @PostMapping
-    public Mono<VehicleDTO> createCar(@Validated @RequestBody final VehicleDTO vehicleDTO) {
+    public Mono<VehicleDTO> create(@Validated @RequestBody final VehicleDTO vehicleDTO) {
         vehicleDTO.setUuid(null);
         return vehicleService.save(vehicleDTO);
     }
@@ -34,7 +34,7 @@ public class VehiclesController {
     }
 
     @PutMapping("/{uuid}")
-    public Mono<VehicleDTO> updateCar(@PathVariable final UUID uuid, @Validated @RequestBody final VehicleDTO vehicleDTO) {
+    public Mono<VehicleDTO> update(@PathVariable final UUID uuid, @Validated @RequestBody final VehicleDTO vehicleDTO) {
         vehicleDTO.setUuid(uuid);
         return vehicleService.save(vehicleDTO);
     }
