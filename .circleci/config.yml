@@ -3,7 +3,7 @@ jobs:
   build:
     environment:
     docker: # run the steps with Docker
-      - image: openjdk:14
+      - image: maven:3.6.3-openjdk-14
     steps: # a collection of executable commands
       - checkout # check out source code to working directory
       - run: mvn clean install
