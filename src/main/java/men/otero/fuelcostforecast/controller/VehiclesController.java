@@ -3,6 +3,7 @@ package men.otero.fuelcostforecast.controller;
 import men.otero.fuelcostforecast.dto.VehicleDTO;
 import men.otero.fuelcostforecast.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -23,6 +24,7 @@ public class VehiclesController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Mono<VehicleDTO> create(@Validated @RequestBody final VehicleDTO vehicleDTO) {
         vehicleDTO.setUuid(null);
         return vehicleService.save(vehicleDTO);

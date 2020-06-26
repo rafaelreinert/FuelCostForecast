@@ -40,7 +40,7 @@ class VehiclesControllerTest {
         ResponseEntity<VehicleDTO> responseEntity = restTemplate.postForEntity("/vehicles", validVehicleDTO, VehicleDTO.class);
 
         VehicleDTO entityBody = responseEntity.getBody();
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
         assertNotNull(entityBody.getUuid());
         entityBody.setUuid(null);
         assertEquals(validVehicleDTO, entityBody);
