@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class VehicleFuelCostForecastTest {
 
     @Test
-    public void createVehicleCostForecast(){
+    public void createVehicleCostForecast() {
         VehicleDTO vehicleDTO = buildValidVehicleDTO(LocalDate.now());
 
         VehicleFuelCostForecast vehicleFuelCostForecast = new VehicleFuelCostForecast(vehicleDTO, 3.5, 100.0, 299.9);
@@ -25,7 +25,7 @@ class VehicleFuelCostForecastTest {
     }
 
     @Test
-    public void createVehicleCostForecastWhenManufacturingDateIsNull(){
+    public void createVehicleCostForecastWhenManufacturingDateIsNull() {
         VehicleDTO vehicleDTO = buildValidVehicleDTO(null);
 
         VehicleFuelCostForecast vehicleFuelCostForecast = new VehicleFuelCostForecast(vehicleDTO, 3.5, 100.0, 299.9);

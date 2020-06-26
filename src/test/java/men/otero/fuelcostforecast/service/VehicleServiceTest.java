@@ -19,7 +19,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
 class VehicleServiceTest {
@@ -48,7 +49,7 @@ class VehicleServiceTest {
 
     @Test
     void getWhenFindReturnAnEmptyOptional() {
-        assertThrows(VehicleDoesNotExistException.class,() -> vehicleService.get(UUID.randomUUID()).block());
+        assertThrows(VehicleDoesNotExistException.class, () -> vehicleService.get(UUID.randomUUID()).block());
     }
 
     @Test

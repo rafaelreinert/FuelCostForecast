@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class VehicleDTOTest {
 
     @Test
-    public void createVehicleDTOFromVehicle(){
-        Vehicle vehicle =  buildValidVehicle();
+    public void createVehicleDTOFromVehicle() {
+        Vehicle vehicle = buildValidVehicle();
 
         VehicleDTO vehicleDTO = new VehicleDTO(vehicle);
 
@@ -26,10 +26,10 @@ class VehicleDTOTest {
     }
 
     @Test
-    public void convertVehicleDTOToVehicle(){
+    public void convertVehicleDTOToVehicle() {
         VehicleDTO vehicleDTO = buildValidVehicleDTO();
 
-        Vehicle vehicle =  vehicleDTO.toVehicle();
+        Vehicle vehicle = vehicleDTO.toVehicle();
 
         assertEquals(vehicleDTO.getUuid(), vehicle.getUuid());
         assertEquals(vehicleDTO.getName(), vehicle.getName());

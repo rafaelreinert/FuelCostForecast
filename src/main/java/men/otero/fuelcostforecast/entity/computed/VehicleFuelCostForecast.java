@@ -23,7 +23,7 @@ public class VehicleFuelCostForecast {
         this.name = vehicleDTO.getName();
         this.brand = vehicleDTO.getBrand();
         this.model = vehicleDTO.getModel();
-        this.manufacturingYear = (vehicleDTO.getManufacturingDate() != null)? vehicleDTO.getManufacturingDate().getYear():null;
+        this.manufacturingYear = (vehicleDTO.getManufacturingDate() != null) ? vehicleDTO.getManufacturingDate().getYear() : null;
         this.spentFuel = calculateTotalSpentFuel(vehicleDTO, kiloMetersOnCity, kiloMetersOnHighway);
         this.totalFuelCost = this.spentFuel * fuelPrice;
     }

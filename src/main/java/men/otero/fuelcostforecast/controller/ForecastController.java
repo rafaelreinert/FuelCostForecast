@@ -19,7 +19,7 @@ public class ForecastController {
     private FuelCostForecastService fuelCostForecastService;
 
     @Operation(description = "Calculate the fuel cost forecast for every vehicle", responses = {
-            @ApiResponse(responseCode = "200", description = "stream All Vehicle Fuel Cost Forecast") })
+            @ApiResponse(responseCode = "200", description = "stream All Vehicle Fuel Cost Forecast")})
     @GetMapping("/cost")
     public Flux<VehicleFuelCostForecast> getAllCostForecastOrderedByTotalFuelCost(
             @RequestParam final Double fuelPrice, @RequestParam final Double kiloMetersOnCity,

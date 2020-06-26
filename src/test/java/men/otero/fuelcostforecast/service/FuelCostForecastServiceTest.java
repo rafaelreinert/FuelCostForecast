@@ -1,7 +1,7 @@
 package men.otero.fuelcostforecast.service;
 
-import men.otero.fuelcostforecast.entity.computed.VehicleFuelCostForecast;
 import men.otero.fuelcostforecast.dto.VehicleDTO;
+import men.otero.fuelcostforecast.entity.computed.VehicleFuelCostForecast;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -27,12 +27,12 @@ class FuelCostForecastServiceTest {
     private FuelCostForecastService fuelCostForecastService;
 
     @Test
-    public void findAllOrderedByTotalFuelCost(){
+    public void findAllOrderedByTotalFuelCost() {
         Mockito.doReturn(Flux.fromArray(new VehicleDTO[]{
-                buildValidVehicleDTO("Vehicle 1",9.42, 11.3),
-                buildValidVehicleDTO("Vehicle 2",7.2, 8.2),
-                buildValidVehicleDTO("Vehicle 3",13.9, 7.3),
-                buildValidVehicleDTO("Vehicle 4",13.2, 11.6)}))
+                buildValidVehicleDTO("Vehicle 1", 9.42, 11.3),
+                buildValidVehicleDTO("Vehicle 2", 7.2, 8.2),
+                buildValidVehicleDTO("Vehicle 3", 13.9, 7.3),
+                buildValidVehicleDTO("Vehicle 4", 13.2, 11.6)}))
                 .when(vehicleService).findAll();
 
         Flux<VehicleFuelCostForecast> allOrderedByTotalFuelCost = fuelCostForecastService
@@ -48,7 +48,7 @@ class FuelCostForecastServiceTest {
     }
 
     @Test
-    public void findAllOrderedByTotalFuelCostWhenHasNoVehicles(){
+    public void findAllOrderedByTotalFuelCostWhenHasNoVehicles() {
         Mockito.doReturn(Flux.empty()).when(vehicleService).findAll();
 
         Flux<VehicleFuelCostForecast> allOrderedByTotalFuelCost = fuelCostForecastService
