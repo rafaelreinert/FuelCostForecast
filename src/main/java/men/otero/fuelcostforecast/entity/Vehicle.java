@@ -18,7 +18,7 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Vehicle {
 
     @Id
     @GeneratedValue(generator = "uuid")
