@@ -1,9 +1,17 @@
-version: 2.1
-
-orbs:
-  maven: circleci/maven@0.0.12
+version: 2
+jobs:
+  build:
+    environment:
+    docker: # run the steps with Docker
+      - image: openjdk:14
+    steps: # a collection of executable commands
+      - checkout # check out source code to working directory
+      - run: mvn clean install
+      - store_artifacts:
+          path: build/libs
 
 workflows:
-  maven_test:
+  version: 2
+  workflow:
     jobs:
-      - maven/test # checkout, build, test, and upload test results
+      - build
