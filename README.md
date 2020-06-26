@@ -24,7 +24,7 @@ Este projeto esta configurando com maven,docker-compose e make, para executar o 
 
 ## Definição da API
 
-O projeto esta com o swagger-ui ativado, para verificar a API basta entrar na URL http://localhost:8080/webjars/swagger-ui/index.html apos a inicializacao do sistema. 
+O projeto esta com o swagger-ui ativado, para verificar a API basta entrar na URL localhost:8080/swagger-ui.html apos a inicializacao do sistema. 
 
 
 # Importante!
