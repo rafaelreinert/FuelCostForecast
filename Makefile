@@ -4,8 +4,10 @@ build:
 	mvn clean install -DskipTests
 	docker-compose build --no-cache app
 
-run:
+up:
 	docker-compose up
+
+run: build up
 
 clean:
 	# remove created images
