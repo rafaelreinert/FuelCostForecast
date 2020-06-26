@@ -1,6 +1,6 @@
 # FuelCostForecast
 
-[![<ORG_NAME>](https://circleci.com/gh/rafaelreinert/FuelCostForecast.svg?style=svg)](<LINK>)
+[![<ORG_NAME>](https://circleci.com/gh/rafaelreinert/FuelCostForecast.svg?style=svg)](<https://app.circleci.com/pipelines/github/rafaelreinert/FuelCostForecast/>)
 
 Projeto para empresa ficticia Ficticius Clean.
 
