@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import men.otero.fuelcostforecast.entity.Car;
+import men.otero.fuelcostforecast.entity.Vehicle;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
@@ -17,7 +17,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarDTO {
+public class VehicleDTO {
 
     private UUID uuid;
 
@@ -42,18 +42,18 @@ public class CarDTO {
     @DecimalMin(value = "0.1", message = "Highway Fuel Economy Can Not Be Less Than 0.1")
     private Double highwayFuelEconomy;
 
-    public CarDTO(Car car) {
-        this.uuid = car.getUuid();
-        this.name = car.getName();
-        this.brand = car.getBrand();
-        this.model = car.getModel();
-        this.manufacturingDate = car.getManufacturingDate();
-        this.cityFuelEconomy = car.getCityFuelEconomy();
-        this.highwayFuelEconomy = car.getHighwayFuelEconomy();
+    public VehicleDTO(Vehicle vehicle) {
+        this.uuid = vehicle.getUuid();
+        this.name = vehicle.getName();
+        this.brand = vehicle.getBrand();
+        this.model = vehicle.getModel();
+        this.manufacturingDate = vehicle.getManufacturingDate();
+        this.cityFuelEconomy = vehicle.getCityFuelEconomy();
+        this.highwayFuelEconomy = vehicle.getHighwayFuelEconomy();
     }
 
-    public Car toCar() {
-        return Car.builder()
+    public Vehicle toVehicle() {
+        return Vehicle.builder()
                 .uuid(this.uuid)
                 .name(this.name)
                 .brand(this.brand)
